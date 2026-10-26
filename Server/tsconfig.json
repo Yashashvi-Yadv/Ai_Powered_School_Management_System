@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    // --- Project Structure ---
+    "rootDir": "./src", // Where your TS files live
+    "outDir": "./dist", // Where compiled JS goes
+    // --- Environment Settings ---
+    "target": "es2022", // Safe, modern target for Node environments
+    "module": "CommonJS", // Standard for Express (change to "nodenext" if using Path 2 above)
+    "moduleResolution": "node",
+    // --- Node Types ---
+    "lib": ["es2022"],
+    "types": ["node"], // Crucial for Express/Node globally available types
+    // --- Output Options ---
+    "sourceMap": true,
+    "esModuleInterop": true, // Allows standard imports from CommonJS modules (like Express)
+    "forceConsistentCasingInFileNames": true,
+    // --- Strictness & Style ---
+    "strict": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true, // Speeds up compilation by skipping checking node_modules
+    "verbatimModuleSyntax": false // Changed to false to fix your export error
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,37 @@
+import { Application } from "express";
+import subjectRoute from "../../modules/Subjects/Admin/subject.admin.route";
+import adminRoutes from "../../modules/auth/Admin/route/admin.auth.route";
+import adminprofileRoute from "../../modules/profile/Admin/admin.profile.route";
+import adminschoolroute from "../../modules/school/Admin/admin.school.route";
+import adminclassroute from "../../modules/Classes/Admin/class.admin.route";
+import subjectroute from "../../modules/Subjects/Admin/subject.admin.route";
+import adminstudentroute from "../../modules/Student/Admin/admin.student.route";
+import homeworkRoute from "../../modules/Homework/Admin/admin.homework.route";
+import examRoute from "../../modules/Exam/Admin/admin.exam.route";
+import marksRoute from "../../modules/Marks/Admin/admin.marks.route";
+import AdminDashboardRoute from "../../modules/Dashboard/Admin/admin.dashboard.route";
+import adminstudenttimetableroute from "../../modules/Timetable/Student/Admin/timetable.admin.route";
+import adminteachertimetableroute from "../../modules/Timetable/Teacher/Admin/teacher.timetable.admin.route";
+import AdminLeaveRoute from "../../modules/Leave/Admin/admin.leave.route";
+import AdminAttendance from "../../modules/Attendance/Admin/admin.attendance.route";
+import AdminChatBotRoute from "../../modules/AritficialIntelligence/Admin/ai.route";
+// fucntion for initializing the routes
+export const registeradminroute = (app: Application) => {
+  app.use("/api/v1/admin/subject", subjectRoute);
+
+  app.use("/api/v1/admin/auth", adminRoutes);
+  app.use("/api/v1/admin/profile", adminprofileRoute);
+  app.use("/api/v1/admin/school", adminschoolroute);
+  app.use("/api/v1/admin/class", adminclassroute);
+  app.use("/api/v1/admin/subject", subjectroute);
+  app.use("/api/v1/admin/student", adminstudentroute);
+  app.use("/api/v1/admin/homework", homeworkRoute);
+  app.use("/api/v1/admin/exam", examRoute);
+  app.use("/api/v1/admin/marks", marksRoute);
+  app.use("/api/v1/admin/dashboard", AdminDashboardRoute);
+  app.use("/api/v1/admin/timetable/student", adminstudenttimetableroute);
+  app.use("/api/v1/admin/timetable/teacher", adminteachertimetableroute);
+  app.use("/api/v1/admin/leave/", AdminLeaveRoute);
+  app.use("/api/v1/admin/attendance", AdminAttendance);
+  app.use("/api/v1/admin/chatbot/", AdminChatBotRoute);
+};
